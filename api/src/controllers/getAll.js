@@ -36,7 +36,7 @@ const allData = async () => {
     let apiDt = await apiData();
     let dbDt = await dbData();
 
-    return apiDt.concat(dbDt);
+    return dbDt.concat(apiDt);
 }
 
 module.exports = {

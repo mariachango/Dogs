@@ -28,8 +28,12 @@ router.get('/', async (req, res) => {
     let foundDog
     if (name) foundDog = getAllData.filter(dog => dog.name.toLowerCase().includes(name.toLowerCase()));
     try {
-        if (foundDog) {
-            res.status(200).send(foundDog);
+        if (name) {
+            if (foundDog.length !== 0) {
+                res.status(200).send(foundDog);
+            } else {
+                res.status(400).send('not found');
+            }
         } else {
             res.status(200).send(getAllData);
         }

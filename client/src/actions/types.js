@@ -1,0 +1,10 @@
+export const GET_DOGS = 'GET_DOGS';
+export const GET_DOG_QUERY = 'GET_DOG_QUERY' ;
+export const GET_DOG = 'GET_DOG';
+export const ADD_DOG = 'ADD_DOG';
+export const GET_TEMPS = 'GET_TEMPS';
+export const TEMPS_FILTER = 'TEMPS_FILTER';
+export const CREATED_FILTER = 'CREATED_FILTER';
+export const NAME_ORDER = 'NAME_ORDER';
+export const WEIGHT_ORDER = 'WEIGHT_ORDER';
+//export const ADD_DOG = 'ADD_DOG' ;

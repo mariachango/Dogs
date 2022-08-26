@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     try {
         await apiData();
         const temps = await Temperament.findAll();
-        res.status(200).send(temps);;
+        res.status(200).send(temps);
     }
     catch (err) {
         console.log('GET TEMPERAMENTS ERROR--->', err);
