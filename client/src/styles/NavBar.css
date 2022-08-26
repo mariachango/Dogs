@@ -1,0 +1,15 @@
+
+
+#navbar {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    background-color:#013aa7;
+    padding: 25px;
+}
+
+a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+

@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from '../components/NavBar.jsx';
 
-export default function DetailPage() {
+export default function Form() {
     return (
         <div>
             <div id="header">
@@ -12,7 +12,7 @@ export default function DetailPage() {
 
             <NavBar />
 
-            <div id="detailcard">
+            <div id="form">
 
 
             </div>

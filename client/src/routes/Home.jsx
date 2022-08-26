@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { getDogs, getDogQuery, getDog, addDog, getTemps, tempsFilter, createdFilter, nameOrder, weightOrder } from '../actions/index.js';
 import Cards from '../components/HomeCards.jsx';
 import NavBar from '../components/NavBar.jsx';
+import Filters from '../components/Filters.jsx';
 import Pages from '../components/Pages.jsx';
 import style from '../styles/Home.css';
 
@@ -63,14 +64,18 @@ export default function Home() {
     }
 
     return (
-        <div>
-            <div>
-                <h1>
-                    <img src="https://i0.wp.com/imagenesparapeques.com/wp-content/uploads/2017/08/Personajes-Puppy-Dogs-Palls.png?resize=300%2C300" alt="Henry Dogs" />
-                </h1>
+        <div id="home">
+            
+            <div id="header">
+                
+                    <img id="pdp" src="https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png" alt="Henry Dogs" />
+                
             </div>
 
             <NavBar />
+
+            <Filters/>
+
         </div>
     )
 };
