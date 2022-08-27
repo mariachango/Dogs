@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { getDogs, getDogQuery, getDog, addDog, getTemps, tempsFilter, createdFilter, nameOrder, weightOrder } from '../actions/index.js';
-import Cards from '../components/HomeCards.jsx';
+import { getDogs, getTemps, tempsFilter, createdFilter, nameOrder, weightOrder, deleteDetails } from '../actions/index.js';
+import Header from '../components/Header.jsx';
 import NavBar from '../components/NavBar.jsx';
-import Filters from '../components/Filters.jsx';
+import HomeCard from '../components/HomeCards.jsx';
 import Pages from '../components/Pages.jsx';
+import Footer from "../components/Footer.jsx";
 import style from '../styles/Home.css';
 
 export default function Home() {
@@ -17,9 +17,9 @@ export default function Home() {
 
     useEffect(() => dispatch(getDogs()), [dispatch]);
     useEffect(() => dispatch(getTemps()), [dispatch]);
+    useEffect(() => dispatch(deleteDetails()), [dispatch]);
 
-    const [nameOrder, setNameOrder] = useState('');
-    const [weightOrder, setWeightOrder] = useState('');
+    const [render, setRender] = useState('');
 
     const [currentPage, setCurrentPage] = useState(1);
     const [cardsPerPage, setCardsPerPage] = useState(8);
@@ -36,45 +36,82 @@ export default function Home() {
         setCurrentPage(1);
         dispatch(getDogs())
     }
-
+    
     function tempsFilterHandler(e) {
         e.preventDefault();
-        setCurrentPage(1);
-        dispatch(tempsFilter(e.target.value))
+        dispatch(tempsFilter(e.target.value));
+        setRender(e.target.value);
     }
 
     function createdFilterHandler(e) {
         e.preventDefault();
-        setCurrentPage(1);
-        dispatch(createdFilter(e.target.value))
+        dispatch(createdFilter(e.target.value));
+        setRender(e.target.value);
     }
 
     function nameOrderHandler(e) {
         e.preventDefault();
         dispatch(nameOrder(e.target.value));
-        setCurrentPage(1);
-        setNameOrder(`${e.target.value}`);
+        setRender(e.target.value);
     }
 
     function weightOrderHandler(e) {
         e.preventDefault();
         dispatch(weightOrder(e.target.value));
-        setCurrentPage(1);
-        setWeightOrder(`${e.target.value}`);
+        setRender(e.target.value);
     }
 
     return (
-        <div id="home">
-            
-            <div id="header">
-                
-                    <img id="pdp" src="https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png" alt="Henry Dogs" />
-                
-            </div>
+        <div id='home' style={style}>
+
+            <Header />
 
             <NavBar />
 
-            <Filters/>
+            <div id="filterBar" style={style}>
+
+                <select onChange={(e) => nameOrderHandler(e)} defaultValue="default">
+                    <option value="A-Z" key='A-Z' defaultValue>A-Z</option>
+                    <option value="Z-A" key='Z-A'>Z-A</option>
+                </select>
+
+                <select onChange={(e) => weightOrderHandler(e)} defaultValue="default">
+                    <option value="ASC" key='ASC' defaultValue>ASC</option>
+                    <option value="DESC" key='DESC'>DESC</option>
+                </select>
+
+                <select onChange={(e) => createdFilterHandler(e)} defaultValue="default">
+                    <option value="All" key='All' defaultValue>All</option>
+                    <option value="Created" key='Created'>Created</option>
+                </select>
+
+                <select onChange={e => tempsFilterHandler(e)}  >
+                    <option value='All' defaultValue>All</option>
+                    {temps.map(t => {
+                        return (
+                            <option value={t.name} key={t.id}>{t.name}</option>
+                        )
+                    })}
+                </select>
+
+            </div>
+
+            <div id="cards">
+                {dogCards.map((d) => {
+                    return (
+                        <HomeCard
+                            id={d.id}
+                            image={d.image}
+                            name={d.name}
+                            temperament={d.temperament}
+                            weight={d.weight}
+                            key={d.id}
+                        />
+                    )
+                })}
+            </div>
+
+            <Footer />
 
         </div>
     )

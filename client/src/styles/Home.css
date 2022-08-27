@@ -1,19 +1,25 @@
-
-
-#home {
-    display:flex;
-    flex-direction: column;
-    align-content: flex-start;
+html {
     background-color: #ededed;
 }
 
-#header {
-    background-color:#fffeb7;
-    padding: 5px;
+#home {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
 }
 
-#pdp {
-    height: 250px;
-    width: 250px;
+#filterBar {
+    background-color:lightgray;
+    padding: 25px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+#cards {
+    width: fit-content;
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

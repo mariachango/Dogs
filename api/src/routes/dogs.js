@@ -57,7 +57,7 @@ router.get('/:id', async (req, res) => {
     try {
         let foundDog = await getAllData.filter(dog => dog.id == id);
         if (foundDog.length !== 0) {
-            res.status(200).send(foundDog);
+            res.status(200).json(foundDog);
         } else {
             res.status(400).send('not found');
         }

@@ -8,10 +8,11 @@ import {
     TEMPS_FILTER,
     CREATED_FILTER,
     NAME_ORDER,
-    WEIGHT_ORDER
+    WEIGHT_ORDER,
+    DELETE_DETAILS
 } from './types.js';
 
-export function getDogs(name) {
+export function getDogs() {
     return async function (dispatch) {
         const dogs = await axios.get('http://localhost:3001/dogs');
         dispatch({ type: GET_DOGS, payload: dogs.data });
@@ -27,12 +28,12 @@ export function getDogQuery(query) {
 
 export function getDog(id) {
     return async function (dispatch) {
-        const dog = await axios.get(`http://localhost:3001/dogs/${id}`);
+        var dog = await axios.get(`http://localhost:3001/dogs/${id}`);
         dispatch({ type: GET_DOG, payload: dog.data });
     };
 };
 
-export function addDog() {
+export function addDog(payload) {
     return async function (dispatch) {
         const dog = await axios.post('http://localhost:3001/dogs', payload);
         dispatch({ type: ADD_DOG, payload: dog.data })
@@ -46,26 +47,32 @@ export function getTemps() {
     };
 };
 
-export function tempsFilter() {
+export function tempsFilter(payload) {
     return {
         type: TEMPS_FILTER , payload 
     };
 };
 
-export function createdFilter() {
+export function createdFilter(payload) {
     return {
         type: CREATED_FILTER , payload 
     };
 };
 
-export function nameOrder() {
+export function nameOrder(payload) {
     return {
         type: NAME_ORDER , payload 
     };
 };
 
-export function weightOrder() {
+export function weightOrder(payload) {
     return {
         type: WEIGHT_ORDER , payload 
+    };
+};
+
+export function deleteDetails(payload) {
+    return {
+        type: DELETE_DETAILS , payload
     };
 };

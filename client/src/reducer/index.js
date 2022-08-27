@@ -8,7 +8,8 @@ import {
     TEMPS_FILTER,
     CREATED_FILTER,
     NAME_ORDER,
-    WEIGHT_ORDER
+    WEIGHT_ORDER,
+    DELETE_DETAILS
 } from '../actions/types.js';
 
 const inicialState = {
@@ -22,7 +23,7 @@ export default function reducer(state = inicialState, action) {
     switch (action.type) {
 
         case GET_DOGS:
-            return { ...state, dogs: action.payload, allDogs: action.payload };
+            return { ...state, allDogs: action.payload, dogs: action.payload };
 
         case GET_DOG_QUERY:
             return { ...state, dogs: action.payload };
@@ -37,12 +38,21 @@ export default function reducer(state = inicialState, action) {
             return { ...state, temps: action.payload };
 
         case TEMPS_FILTER:
-            const filteredByT = state.allDogs.filter(d => d.temperament.includes(action.payload));
-            return { ...state, dogs: filteredByT };
+            if (action.payload === 'All') {
+                return { ...state, dogs: state.allDogs };
+            } else {
+                const filteredByT = state.allDogs.filter(d => d.temperament?.includes(action.payload));
+                return { ...state, dogs: filteredByT };
+            }
 
         case CREATED_FILTER:
-            const filteredByC = state.allDogs.filter(d => d.createdByMe);
-            return { ...state, dogs: filteredByC };
+
+            if (action.payload === 'Created') {
+                const filteredByC = state.allDogs.filter(d => d.createdByMe);
+                return { ...state, dogs: filteredByC };
+            } else if (action.payload === 'All') {
+                return { ...state, dogs: state.allDogs };
+            }
 
         case NAME_ORDER:
             let nameOrder;
@@ -70,6 +80,8 @@ export default function reducer(state = inicialState, action) {
             }
             return { ...state, dogs: weightOrder };
 
+        case DELETE_DETAILS:
+            return { ...state, dog: [] };
 
         default: return state;
     }

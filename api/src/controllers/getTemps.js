@@ -11,14 +11,19 @@ const apiData = async () => {
             temperament: dg.temperament,
         }
     })
+
     const tempList = [];
     apiDt.forEach(dg => tempList.push(dg.temperament));
-    const list = tempList.join('').split(',').map(s => s.trim());
-
-    list.map( async (temp) => {
-        await Temperament.findOrCreate({
-            where: {name: temp},  });
-     });
+    console.log(tempList);
+    const list = tempList.join(',').split(',').map(s => s.trim());
+    console.log(list);
+    list.map(async (temp) => {
+        if (temp !== '') {
+            await Temperament.findOrCreate({
+                where: { name: temp },
+            });
+        }
+    });
 }
 
 module.exports = {

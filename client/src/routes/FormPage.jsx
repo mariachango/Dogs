@@ -1,21 +1,43 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { addDog } from '../actions/index.js';
+import Header from '../components/Header.jsx';
 import NavBar from '../components/NavBar.jsx';
+import Footer from "../components/Footer.jsx";
+import style from '../styles/FormPage.css';
 
-export default function Form() {
+export default function FormPage() {
+
     return (
-        <div>
-            <div id="header">
+        <div id="FormPage" style={style}>
 
-                <img id="pdp" src="https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png" alt="Henry Dogs" />
-
-            </div>
+            <Header />
 
             <NavBar />
 
-            <div id="form">
+            <div id="Form">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" />
+                    
+                    <label for="weight">Weight</label>
+                    <input type="text" id="weight" name="weight" />
 
+                    <label for="height">Height</label>
+                    <input type="text" id="height" name="height" />
+                    
+                    <label for="life_span">Life Span</label>
+                    <input type="text" id="life_span" name="life_span" />
 
+                    <input type="checkbox" />
+
+                    <button>Submit</button>
+                </form>
             </div>
+
+            <Footer />
 
         </div>
     )

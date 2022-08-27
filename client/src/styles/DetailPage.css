@@ -1,0 +1,25 @@
+#DetailPage {
+ width: auto;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#detailCard {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 700px;
+    background-color: white;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#dp {
+    justify-content: center;
+    height: 300px;
+}
