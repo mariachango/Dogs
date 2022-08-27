@@ -81,12 +81,12 @@ export default function Home() {
                 </select>
 
                 <select onChange={(e) => createdFilterHandler(e)} defaultValue="default">
-                    <option value="All" key='All' defaultValue>All</option>
-                    <option value="Created" key='Created'>Created</option>
+                    <option value="All" key='All' defaultValue>All Dogs</option>
+                    <option value="Created" key='Created'>Created by Me</option>
                 </select>
 
-                <select onChange={e => tempsFilterHandler(e)}  >
-                    <option value='All' defaultValue>All</option>
+                <select onChange={(e) => tempsFilterHandler(e)}  >
+                    <option value='All' defaultValue>All Temperaments</option>
                     {temps.map(t => {
                         return (
                             <option value={t.name} key={t.id}>{t.name}</option>

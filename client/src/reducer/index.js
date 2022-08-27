@@ -53,6 +53,7 @@ export default function reducer(state = inicialState, action) {
             } else if (action.payload === 'All') {
                 return { ...state, dogs: state.allDogs };
             }
+            break;
 
         case NAME_ORDER:
             let nameOrder;
