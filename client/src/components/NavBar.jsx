@@ -7,7 +7,7 @@ import style from '../styles/NavBar.css';
 export default function NavBar() {
     
     const dispatch = useDispatch();
-    const [search , setSearch] = useState();
+    const [search , setSearch] = useState('');
     
     function changeHandler(e) {
         e.preventDefault();
@@ -17,7 +17,7 @@ export default function NavBar() {
     function submitHandler(e) {
         e.preventDefault();
         dispatch(getDogQuery(search));
-        e.target.value='';
+        setSearch('');
     }
     
     return (
@@ -31,7 +31,7 @@ export default function NavBar() {
 
 
             <div id="searchbar" >
-                <input type="text" placeholder="Search.." onChange={(e) => changeHandler(e)}/>
+                <input value={search} type="text" placeholder="Search.." onChange={(e) => changeHandler(e)} onKeyPress={e => e.key === 'Enter' && submitHandler(e)}/>
                 <button type="submit" onClick={(e) => submitHandler(e)}>Search</button>
             </div>
 

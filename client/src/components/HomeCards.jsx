@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import style from '../styles/HomeCards.css';
 
 export default function HomeCard({ id, image, name, temperament, weight }) {
+    
+    if(!image) {image = "https://play-lh.googleusercontent.com/PtA3zl3BnaONpKTGkXggmsnVQecMd8vAv-qZC3-BA8m5hUZJPs26mV-oO7xrDFAuReQ";}
+    
     return (
 
         <Link to={`/dogs/${id}`}>

@@ -19,6 +19,10 @@ export default function DetailPage(props) {
         dispatch(getDog(id));
     }, [dispatch, id]);
 
+    if (dog.length > 0 && !dog[0].image) {
+        dog[0].image = "https://play-lh.googleusercontent.com/PtA3zl3BnaONpKTGkXggmsnVQecMd8vAv-qZC3-BA8m5hUZJPs26mV-oO7xrDFAuReQ";
+    }
+
     return (
         <div id="DetailPage" style={style}>
 
@@ -28,7 +32,7 @@ export default function DetailPage(props) {
 
             <div id="container">
                 <div id="detailCard">
-                    <div><img id="dp" src={dog.length > 0 && dog[0].image} alt="Img" /></div>
+                    <div><img id="dp" src={dog.length > 0 ? dog[0].image : undefined} alt="Img" /></div>
                     <p>{dog.length > 0 && dog[0].name}</p>
                     <p>{dog.length > 0 && dog[0].weight}</p>
                     <p>{dog.length > 0 && dog[0].height}</p>

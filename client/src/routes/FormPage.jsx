@@ -168,7 +168,7 @@ export default function FormPage() {
 
     return (
 
-        <div id="FormPage">
+        <div id="FormPage" style={style}>
 
             <Header />
 
@@ -179,7 +179,7 @@ export default function FormPage() {
 
                     <div id="name">
                         <label className="label">Name</label>
-                        <input type="text" id="name" name="name" required onChange={(e) => changeHandler(e)} />
+                        <input value={input.name} type="text" id="name" name="name" required onChange={(e) => changeHandler(e)} />
                         {err.name &&
                             <span className="error">{err.name}</span>
                         }
@@ -192,7 +192,7 @@ export default function FormPage() {
                         <div>
                             <label >MIN</label>
 
-                            <input type="text" className="input" id="min_weight" name="min_weight" required onChange={(e) => changeHandler(e)} />
+                            <input value={input.min_weight} type="text" className="input" id="min_weight" name="min_weight" required onChange={(e) => changeHandler(e)} />
                             {err.min_weight &&
                                 <span className="error">{err.min_weight}</span>
                             }
@@ -200,7 +200,7 @@ export default function FormPage() {
 
                         <div>
                             <label >MAX</label>
-                            <input type="text" className="input" id="max_weight" name="max_weight" required onChange={(e) => changeHandler(e)} />
+                            <input value={input.max_weight} type="text" className="input" id="max_weight" name="max_weight" required onChange={(e) => changeHandler(e)} />
                             {err.max_weight &&
                                 <span className="error">{err.max_weight}</span>
                             }
@@ -213,7 +213,7 @@ export default function FormPage() {
                         <div>
                             <label >MIN</label>
 
-                            <input type="text" className="input" id="min_height" name="min_height" required onChange={(e) => changeHandler(e)} />
+                            <input value={input.min_height} type="text" className="input" id="min_height" name="min_height" required onChange={(e) => changeHandler(e)} />
                             {err.min_height &&
                                 <span className="error">{err.min_height}</span>
                             }
@@ -222,7 +222,7 @@ export default function FormPage() {
                         <div>
                             <label >MAX</label>
 
-                            <input type="text" className="input" id="max_height" name="max_height" required onChange={(e) => changeHandler(e)} />
+                            <input value={input.max_height} type="text" className="input" id="max_height" name="max_height" required onChange={(e) => changeHandler(e)} />
                             {err.max_height &&
                                 <span className="error">{err.max_height}</span>
                             }
@@ -235,7 +235,7 @@ export default function FormPage() {
                         <div>
                             <label >MIN</label>
 
-                            <input type="text" className="input" id="min_life_span" name="min_life_span" required onChange={(e) => changeHandler(e)} />
+                            <input value={input.min_life_span} type="text" className="input" id="min_life_span" name="min_life_span" required onChange={(e) => changeHandler(e)} />
                             {err.min_life_span &&
                                 <span className="error">{err.min_life_span}</span>
                             }
@@ -244,7 +244,7 @@ export default function FormPage() {
                         <div>
                             <label >MAX</label>
 
-                            <input type="text" className="input" id="max_life_span" name="max_life_span" required onChange={(e) => changeHandler(e)} />
+                            <input value={input.max_life_span} type="text" className="input" id="max_life_span" name="max_life_span" required onChange={(e) => changeHandler(e)} />
                             {err.max_life_span &&
                                 <span className="error">{err.max_life_span}</span>
                             }
@@ -270,8 +270,8 @@ export default function FormPage() {
                             )}
                         </div>
 
-                        {err.name &&
-                            <span class='error'>{err.name}</span>
+                        {err.temperament &&
+                            <span class='error'>{err.temperament}</span>
                         }
                     </div>
 

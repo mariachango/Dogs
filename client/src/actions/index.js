@@ -21,8 +21,12 @@ export function getDogs() {
 
 export function getDogQuery(query) {
     return async function (dispatch) {
-        const dog = await axios.get(`http://localhost:3001/dogs/?name=${query}`);
+        try {
+            const dog = await axios.get(`http://localhost:3001/dogs/?name=${query}`);
             dispatch({ type: GET_DOG_QUERY, payload: dog.data });
+        } catch {
+            alert("Nothing was found.");
+        }
     };
 };
 
@@ -49,30 +53,30 @@ export function getTemps() {
 
 export function tempsFilter(payload) {
     return {
-        type: TEMPS_FILTER , payload 
+        type: TEMPS_FILTER, payload
     };
 };
 
 export function createdFilter(payload) {
     return {
-        type: CREATED_FILTER , payload 
+        type: CREATED_FILTER, payload
     };
 };
 
 export function nameOrder(payload) {
     return {
-        type: NAME_ORDER , payload 
+        type: NAME_ORDER, payload
     };
 };
 
 export function weightOrder(payload) {
     return {
-        type: WEIGHT_ORDER , payload 
+        type: WEIGHT_ORDER, payload
     };
 };
 
 export function deleteDetails(payload) {
     return {
-        type: DELETE_DETAILS , payload
+        type: DELETE_DETAILS, payload
     };
 };
