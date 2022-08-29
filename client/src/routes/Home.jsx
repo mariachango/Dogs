@@ -21,8 +21,6 @@ export default function Home() {
 
     const [render, setRender] = useState('');
 
-
-
     const [currentPage, setCurrentPage] = useState(1);
     const [cardsPerPage, setCardsPerPage] = useState(8);
     const lastCard = (currentPage * cardsPerPage);
@@ -33,11 +31,18 @@ export default function Home() {
         setCurrentPage(pageNumber);
     };
 
-
-
+    const allpages = Math.ceil(dogs / cardsPerPage);
 
     function clickHandler(e) {
         setCurrentPage(e);
+    }
+
+    function clickPrevHandler() {
+        setCurrentPage(currentPage - 1);
+    }
+
+    function clickNextHandler() {
+        setCurrentPage(currentPage + 1);
     }
 
     function tempsFilterHandler(e) {
@@ -131,6 +136,8 @@ export default function Home() {
                 dogs={dogs.length}
                 clickHandler={clickHandler}
                 currentPage={currentPage}
+                clickPrevHandler={clickPrevHandler}
+                clickNextHandler={clickNextHandler}
             />
 
             <Footer />
