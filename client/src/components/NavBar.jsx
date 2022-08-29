@@ -32,7 +32,7 @@ export default function NavBar() {
 
             <div id="searchbar" >
                 <input value={search} type="text" placeholder="Search.." onChange={(e) => changeHandler(e)} onKeyPress={e => e.key === 'Enter' && submitHandler(e)}/>
-                <button type="submit" onClick={(e) => submitHandler(e)}>Search</button>
+                <button id='button' type="submit" onClick={(e) => submitHandler(e)}>Search</button>
             </div>
 
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
+import style from '../styles/Pages.css';
 
-export default function Pages ({ cardsPerPage, dogs, clickHandler }) {
+export default function Pages ({ cardsPerPage, dogs, clickHandler, currentPage }) {
     const pages = [];
 
     for (let i = 1; i <= Math.ceil(dogs / cardsPerPage); i++) {
@@ -8,16 +9,12 @@ export default function Pages ({ cardsPerPage, dogs, clickHandler }) {
     }
 
     return (
-        <nav>
-            <ul className='pagination'>
+            <div id='pagination' style={style}>
                 {pages.map(n => (
-                    <li key={n}>
-                        <a href="#" onClick={() => clickHandler(n)}>
+                        <a key={n} href="#" className='page'  id={currentPage === n && 'active'} onClick={() => clickHandler(n)}>
                             {n}
                         </a>
-                    </li>
                 ))}
-            </ul>
-        </nav>
+            </div>
     );
 };

@@ -130,6 +130,7 @@ export default function Home() {
                 cardsPerPage={cardsPerPage}
                 dogs={dogs.length}
                 clickHandler={clickHandler}
+                currentPage={currentPage}
             />
 
             <Footer />

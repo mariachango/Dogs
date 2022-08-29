@@ -20,7 +20,7 @@ export default function DetailPage(props) {
     }, [dispatch, id]);
 
     if (dog.length > 0 && !dog[0].image) {
-        dog[0].image = "https://play-lh.googleusercontent.com/PtA3zl3BnaONpKTGkXggmsnVQecMd8vAv-qZC3-BA8m5hUZJPs26mV-oO7xrDFAuReQ";
+        dog[0].image = "https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png";
     }
 
     return (
@@ -32,7 +32,7 @@ export default function DetailPage(props) {
 
             <div id="container">
                 <div id="detailCard">
-                    <div><img id="dp" src={dog.length > 0 ? dog[0].image : undefined} alt="Img" /></div>
+                    <div><img id="dp" referrerPolicy="no-referrer" src={dog.length > 0 ? dog[0].image : undefined} alt="Img" /></div>
                     <p>{dog.length > 0 && dog[0].name}</p>
                     <p>{dog.length > 0 && dog[0].weight}</p>
                     <p>{dog.length > 0 && dog[0].height}</p>
