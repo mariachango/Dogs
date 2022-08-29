@@ -4,44 +4,80 @@
     top: 0;
     justify-content: space-between;
     background-color: #013aa7;
-    padding: 25px;
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
 }
 
 .link {
-    float: left;
-    display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 22px;
     text-decoration: none;
     font-size: 17px;
 }
 
 .link:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #bc1332;
 }
 
-input[type=text] {
-
-    padding: 6px;
+#searchbar input[type=text] {
     border: none;
-    margin-top: 8px;
-    margin-right: 16px;
     font-size: 17px;
+    background: #ccc;
+    color: #013aa7;
+    height: 97%;
+    text-align: center;
 }
 
-button {
-
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
+#searchbar button {
+    background: #bc1332;
+    color: #f2f2f2;
     font-size: 17px;
     border: none;
     cursor: pointer;
+    height: 100%;
+    padding: 20px 22px;
+    margin-bottom: 1px;
 }
 
-button:hover {
-    background: #ccc;
+#searchbar button:hover {
+    background: #013aa7;
+    color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        position:static;
+    }
+
+    #links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #searchbar {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #searchbar input[type=text] {
+        margin: 0px;
+        height: auto;
+        width: 75%;
+    }
+
+    #searchbar button {
+        margin: 0px;
+        
+        width: 25%;
+    }
+
 }

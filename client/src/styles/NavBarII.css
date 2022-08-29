@@ -1,0 +1,30 @@
+#navbarII {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: flex-start;
+    background-color: #013aa7;
+}
+
+.linkII {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.linkII:hover {
+    background-color: #bc1332;
+}
+
+@media screen and (max-width: 600px) {
+ #navbarII {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .linkII {
+    background-color: #bc1332;
+ }
+}

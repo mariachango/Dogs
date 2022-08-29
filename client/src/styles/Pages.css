@@ -2,8 +2,19 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 10px;
-    margin-bottom: 50px;
+    align-content: space-around;
+    margin: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    height: 100px;
+}
+
+.shown {
+    list-style: none;
+}
+
+.hidden {
+    list-style: none;
 }
 
 .page {
@@ -16,7 +27,7 @@
 }
 
 .page:hover {
-    background-color:#013aa7;
+    background-color: #013aa7;
     color: #f2f2f2;
     border-radius: 5px;
 }
@@ -25,4 +36,30 @@
     background-color: #bc1332;
     color: #f2f2f2;
     border-radius: 5px;
+}
+
+.pn {
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #013aa7;
+    color: #f2f2f2;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.pn:hover {
+    background-color: #bc1332;
+    color: #f2f2f2;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 700px) {
+    .hidden {
+        display: none;
+    }
+
+    #pagination {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
 }

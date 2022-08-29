@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { getDog } from '../actions/index.js';
 import Header from '../components/Header.jsx';
-import NavBar from '../components/NavBar.jsx';
+import NavBarII from '../components/NavBarII.jsx';
 import Footer from "../components/Footer.jsx";
 import style from '../styles/DetailPage.css';
 
@@ -28,7 +28,7 @@ export default function DetailPage(props) {
 
             <Header/>
 
-            <NavBar />
+            <NavBarII />
 
             <div id="container">
                 <div id="detailCard">

@@ -22,3 +22,21 @@
     justify-content: center;
     height: 300px;
 }
+
+@media only screen and (max-width: 500px) {
+    #container {
+        margin: 0px;
+    }
+    
+    #detailCard {
+        height: fit-content;
+        width: 325px;
+        margin: 40px;
+        padding: 30px;
+    }
+
+    #dp {
+        height: auto;
+        width: 275px;
+    }
+}

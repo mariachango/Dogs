@@ -24,7 +24,7 @@ export default function NavBar() {
         
         <div id="navbar" style={style}>
 
-            <div id="link" >
+            <div id="links" >
                 <a className="link" href="/dogs">Home</a>
                 <a className="link" href="/add">Add</a>
             </div>

@@ -11,33 +11,33 @@
 }
 
 #puppydp {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     margin: 100px;
+    padding: 50px;
 }
 
 #side {
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: space-around;
     width: 500px;
     height: 400px;
     background-color: white;
-    margin: 100px;
-    margin-left: 0px;   
+    margin: 150px;
+    margin-left: 0px;
+    padding: 50px;
 }
 
 #welcome {
-    color:#bc1332;
+    color: #bc1332;
     font-weight: bold;
     font-size: 75px;
-    margin: 20px;
 }
 
 #intro {
     font-size: 20px;
-    margin: 20px;
-    margin-bottom: 70px;
     font-weight: lighter;
 }
 
@@ -46,11 +46,11 @@
     text-decoration: none;
     font-weight: normal;
 }
- 
+
 #enter {
-    align-self: center;
+
     color: #f2f2f2;
-    background-color:#013aa7;
+    background-color: #013aa7;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -58,5 +58,55 @@
 }
 
 #enter:hover {
-    background-color:#bc1332;
+    background-color: #bc1332;
+}
+
+@media only screen and (max-width: 1200px) {
+    #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #puppydp {
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    #side {
+        margin: auto;
+        margin-bottom: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #puppydp {
+        display: flex;
+        width: 300px;
+        height: auto;
+        margin: auto;
+        justify-self: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #side {
+        height: 350px;
+        width: 250px;
+        margin: auto;
+        margin-bottom: 30px;
+        padding: 40px;
+    }
+
+    #welcome {
+        font-size: 50px;
+    }
 }

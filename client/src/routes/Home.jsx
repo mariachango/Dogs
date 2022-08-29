@@ -115,7 +115,7 @@ export default function Home() {
                 </select>
 
             </div>
-
+<div id='cardsC'>
             <div id="cards">
                 {dogCards.map((d) => {
                     return (
@@ -130,15 +130,17 @@ export default function Home() {
                     )
                 })}
             </div>
-
-            <Pages
-                cardsPerPage={cardsPerPage}
-                dogs={dogs.length}
-                clickHandler={clickHandler}
-                currentPage={currentPage}
-                clickPrevHandler={clickPrevHandler}
-                clickNextHandler={clickNextHandler}
-            />
+</div>
+            
+                <Pages
+                    cardsPerPage={cardsPerPage}
+                    dogs={dogs.length}
+                    clickHandler={clickHandler}
+                    currentPage={currentPage}
+                    clickPrevHandler={clickPrevHandler}
+                    clickNextHandler={clickNextHandler}
+                />
+            
 
             <Footer />
 
