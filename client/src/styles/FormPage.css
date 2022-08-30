@@ -1,5 +1,183 @@
-.error{
+#containerForm {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#Form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 700px;
+    background-color: white;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    padding: 20px 30px;
+}
+
+#Form h1 {
+    font-style: italic;
+    font-size: 40px;
     color: #bc1332;
-    font-size: 12px;
-    margin-top: 0;
+}
+
+#big {
+    width: 270px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.small {
+    width: 75px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+.labelForm {
+    width: 150px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-right: 0px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: start;
+}
+
+
+.miniLabel {
+    width: 50px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    text-align: start;
+    outline: #bc1332 solid 1px;
+}
+
+#name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 450px;
+    height: 150px;
+}
+
+#sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 450px;
+    
+}
+
+#temps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#temps select {
+    width: 270px;
+    margin: auto;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+#tempContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    width: 425px;
+    height: fit-content;
+    margin: 10px;
+    justify-content: center;
+}
+
+.saved {
+    margin: 15px;
+    list-style: none;
+}
+
+#Form button[type=submit] {
+    width: 95%;
+    background-color: #013aa7;
+    color: white;
+    padding: 14px 20px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+#Form button[type=submit]:hover {
+    background-color: #bc1332;
+}
+
+.error {
+    color: rgb(150, 150, 150);
+    font-size: 10px;
+    margin-top: 0px;
+}
+
+.err {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    #Form {
+        width: 275px;
+        height: fit-content;
+    }
+
+    #sub {
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sub {
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #tempContainer {
+        width: auto;
+    }
+
+    .labelForm {
+        margin: 0px;
+    }
 }

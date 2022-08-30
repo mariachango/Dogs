@@ -1,18 +1,63 @@
-
+#link{
+    text-decoration: none;
+    color: black;
+}
 
 #card {
     background-color: white;
-    height: 350px;
+    height: 400px;
     width: 400px;
     margin-top: 60px;
     margin-bottom: 20px;
     margin-left: 35px;
     margin-right: 35px;
     padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+#card:hover {
+    background-color: lightgrey;
+}
+
 
 #img {
     height: 150px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+#card h1 {
+    color: #013aa7;
+    margin-top: 10px;
+    margin-bottom:0px;
+    font-family: Lucida Sans Unicode;
+}
+
+
+.label {
+    margin-right: 10px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+#w {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#t {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 @media only screen and (max-width: 500px) {

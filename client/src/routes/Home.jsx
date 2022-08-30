@@ -85,62 +85,65 @@ export default function Home() {
             <NavBar />
 
             <div id="filterBar" style={style}>
+                <div id="sort">
+                    <select onChange={(e) => nameOrderHandler(e)} defaultValue="default">
+                        <option value='default' disabled='default' hidden>Order by name</option>
+                        <option value="A-Z" key='A-Z' defaultValue>A-Z</option>
+                        <option value="Z-A" key='Z-A'>Z-A</option>
+                    </select>
 
-                <select onChange={(e) => nameOrderHandler(e)} defaultValue="default">
-                    <option value='default' disabled='default' hidden>Order by name</option>
-                    <option value="A-Z" key='A-Z' defaultValue>A-Z</option>
-                    <option value="Z-A" key='Z-A'>Z-A</option>
-                </select>
+                    <select onChange={(e) => weightOrderHandler(e)} defaultValue="default">
+                        <option value='default' disabled='default' hidden>Order by weight</option>
+                        <option value="ASC" key='ASC' defaultValue>ASC</option>
+                        <option value="DESC" key='DESC'>DESC</option>
+                    </select>
+                </div>
 
-                <select onChange={(e) => weightOrderHandler(e)} defaultValue="default">
-                    <option value='default' disabled='default' hidden>Order by weight</option>
-                    <option value="ASC" key='ASC' defaultValue>ASC</option>
-                    <option value="DESC" key='DESC'>DESC</option>
-                </select>
+                <div id="filters">
+                    <select onChange={(e) => createdFilterHandler(e)} defaultValue="default">
+                        <option value='default' disabled='default' hidden>All Dogs</option>
+                        <option value="All" key='All' defaultValue>All Dogs</option>
+                        <option value="Created" key='Created'>Created by Me</option>
+                    </select>
 
-                <select onChange={(e) => createdFilterHandler(e)} defaultValue="default">
-                    <option value='default' disabled='default' hidden>All Dogs</option>
-                    <option value="All" key='All' defaultValue>All Dogs</option>
-                    <option value="Created" key='Created'>Created by Me</option>
-                </select>
+                    <select onChange={(e) => tempsFilterHandler(e)}  >
+                        <option value='default' disabled='default' hidden>All Temperaments</option>
+                        <option value='All' defaultValue>All Temperaments</option>
+                        {temps.map(t => {
+                            return (
+                                <option value={t.name} key={t.id}>{t.name}</option>
+                            )
+                        })}
+                    </select>
+                </div>
 
-                <select onChange={(e) => tempsFilterHandler(e)}  >
-                    <option value='default' disabled='default' hidden>All Temperaments</option>
-                    <option value='All' defaultValue>All Temperaments</option>
-                    {temps.map(t => {
+            </div>
+
+            <div id='cardsC'>
+                <div id="cards">
+                    {dogCards.map((d) => {
                         return (
-                            <option value={t.name} key={t.id}>{t.name}</option>
+                            <HomeCard
+                                id={d.id}
+                                image={d.image}
+                                name={d.name}
+                                temperament={d.temperament}
+                                weight={d.weight}
+                                key={d.id}
+                            />
                         )
                     })}
-                </select>
+                </div>
+            </div>
 
-            </div>
-<div id='cardsC'>
-            <div id="cards">
-                {dogCards.map((d) => {
-                    return (
-                        <HomeCard
-                            id={d.id}
-                            image={d.image}
-                            name={d.name}
-                            temperament={d.temperament}
-                            weight={d.weight}
-                            key={d.id}
-                        />
-                    )
-                })}
-            </div>
-</div>
-            
-                <Pages
-                    cardsPerPage={cardsPerPage}
-                    dogs={dogs.length}
-                    clickHandler={clickHandler}
-                    currentPage={currentPage}
-                    clickPrevHandler={clickPrevHandler}
-                    clickNextHandler={clickNextHandler}
-                />
-            
+            <Pages
+                cardsPerPage={cardsPerPage}
+                dogs={dogs.length}
+                clickHandler={clickHandler}
+                currentPage={currentPage}
+                clickPrevHandler={clickPrevHandler}
+                clickNextHandler={clickNextHandler}
+            />
 
             <Footer />
 

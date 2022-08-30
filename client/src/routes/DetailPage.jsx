@@ -26,22 +26,40 @@ export default function DetailPage(props) {
     return (
         <div id="DetailPage" style={style}>
 
-            <Header/>
+            <Header />
 
             <NavBarII />
 
             <div id="container">
                 <div id="detailCard">
                     <div><img id="dp" referrerPolicy="no-referrer" src={dog.length > 0 ? dog[0].image : undefined} alt="Img" /></div>
-                    <p>{dog.length > 0 && dog[0].name}</p>
-                    <p>{dog.length > 0 && dog[0].weight}</p>
-                    <p>{dog.length > 0 && dog[0].height}</p>
-                    <p>{dog.length > 0 && dog[0].life_span}</p>
-                    <p>{dog.length > 0 && dog[0].temperament}</p>
+
+                    <h1>{dog.length > 0 && dog[0].name}</h1>
+
+                    <div id="weight">
+                        <p className="labels">Weight:</p>
+                        <p>{`${dog.length > 0 && dog[0].weight} kg.`}</p>
+                    </div>
+
+                    <div id="height">
+                        <p className="labels">Height:</p>
+                        <p>{`${dog.length > 0 && dog[0].height} cm.`}</p>
+                    </div>
+
+                    <div id="lifespan">
+                        <p className="labels">Lifespan:</p>
+                        <p>{`${dog.length > 0 && dog[0].life_span}.`}</p>
+                    </div>
+
+                    <div id="temps">
+                        <p className="labels">Temperaments:</p>
+                        <p>{`${dog.length > 0 && dog[0].temperament}.`}</p>
+                    </div>
+
                 </div>
             </div>
 
-            <Footer/>
+            <Footer />
 
         </div>
     )

@@ -8,16 +8,22 @@ export default function HomeCard({ id, image, name, temperament, weight }) {
 
     return (
 
-        <Link to={`/dogs/${id}`}>
+        <Link id='link' to={`/dogs/${id}`}>
             <div id='card' style={style}>
 
                 <img id='img' referrerPolicy="no-referrer" src={image} alt='Img' />
 
                 <h1>{name}</h1>
 
-                <p>{weight}</p>
+                <div id="w">
+                    <p className="label">Weight:</p>
+                    <p>{`${weight} kg`}</p>
+                </div>
 
-                <p>{temperament}</p>
+                <div id="t">
+                    <p className="label">Temperaments:</p>
+                    <p>{temperament}</p>
+                </div>
 
             </div>
         </Link>

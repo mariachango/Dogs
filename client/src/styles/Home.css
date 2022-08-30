@@ -8,13 +8,6 @@ html {
     align-content: flex-start;
 }
 
-#filterBar {
-    background-color:lightgray;
-    padding: 25px;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 #cards {
     width: fit-content;
     margin: 0px;
@@ -24,9 +17,48 @@ html {
     justify-content: center;
 }
 
+#filterBar {
+    display: flex;
+    background-color:lightgray;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#sort {
+    display: flex;
+    flex-direction: row;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+}
+
+#filterBar select {
+    font-size: 15px;
+    padding: 20px 22px;
+    border: none;
+    background-color: lightgrey;
+    width: 50%;
+}
+
+#filterBar select:hover {
+    background-color: #bc1332; 
+    color:  #f2f2f2;
+}
+
+#filterBar option {
+    background-color: #f2f2f2; 
+    color: black;
+}
+
 @media only screen and (max-width: 500px) {
     #cardsC {
         display: flex;
         justify-content: center;
+    }
+    #filterBar {
+        display: flex;
+        flex-direction: column;
     }
 }

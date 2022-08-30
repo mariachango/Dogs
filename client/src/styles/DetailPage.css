@@ -1,5 +1,5 @@
 #DetailPage {
- width: auto;
+    width: auto;
 }
 
 #container {
@@ -16,18 +16,58 @@
     background-color: white;
     justify-content: center;
     align-content: center;
+    border-radius: 20px;
+}
+
+#detailCard h1 {
+    color: #bc1332;
+    font-size: 40px;
+    font-family: Lucida Sans Unicode;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+.labels {
+    color: #013aa7;
+    margin-right: 10px;
+    font-family: Lucida Sans Unicode;
 }
 
 #dp {
     justify-content: center;
     height: 300px;
+    border-radius: 10px;
+}
+
+#weight {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#height {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#lifespan {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#temps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 500px) {
     #container {
         margin: 0px;
     }
-    
+
     #detailCard {
         height: fit-content;
         width: 325px;
@@ -38,5 +78,10 @@
     #dp {
         height: auto;
         width: 275px;
+    }
+    
+    #temps {
+        display: flex;
+        flex-direction: column;
     }
 }
