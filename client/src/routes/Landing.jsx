@@ -14,8 +14,9 @@ export default function Landing() {
                 <div id='side'>
                     <div id="welcome">Welcome!</div>
 
-                    <p id="intro">This is a personal individual proyect for the bootcamp <a className="intro-a" href="https://www.soyhenry.com/">
-                        SoyHenry</a> using the <a className="intro-a" href='https://www.thedogapi.com/'>The Dog Api</a>.</p>
+                    <p id="intro">This is a personal individual 
+                    proyect for the bootcamp <a className="intro-a" href="https://www.soyhenry.com/">SoyHenry</a>  
+                     using the <a className="intro-a" href='https://www.thedogapi.com/'>The Dog Api</a>.</p>
 
                     <div id="enterCoontainer" >
                         <a id="enter" href="/dogs">ENTER</a>
