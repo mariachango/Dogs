@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getDogQuery } from '../actions/index.js';
 import style from '../styles/NavBar.css';
 
-export default function NavBar() {
+export default function NavBar( {setCurrentPage} ) {
     
     const dispatch = useDispatch();
     const [search , setSearch] = useState('');
@@ -17,6 +17,7 @@ export default function NavBar() {
     function submitHandler(e) {
         e.preventDefault();
         dispatch(getDogQuery(search));
+        setCurrentPage(1);
         setSearch('');
     }
     

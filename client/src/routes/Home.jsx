@@ -27,11 +27,9 @@ export default function Home() {
     const firsCard = (lastCard - cardsPerPage);
     const dogCards = dogs.slice(firsCard, lastCard);
 
-    const page = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-
-    const allpages = Math.ceil(dogs / cardsPerPage);
+    // const page = (pageNumber) => {
+    //     setCurrentPage(pageNumber);
+    // };
 
     function clickHandler(e) {
         setCurrentPage(e);
@@ -43,6 +41,11 @@ export default function Home() {
 
     function clickNextHandler() {
         setCurrentPage(currentPage + 1);
+    }
+    
+    function pageOne(e) {
+        setCurrentPage(1);
+        console.log(currentPage);
     }
 
     function tempsFilterHandler(e) {
@@ -82,7 +85,7 @@ export default function Home() {
 
             <Header />
 
-            <NavBar />
+            <NavBar setCurrentPage={setCurrentPage}/>
 
             <div id="filterBar" style={style}>
                 <div id="sort">

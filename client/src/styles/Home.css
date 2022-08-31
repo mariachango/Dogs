@@ -6,6 +6,12 @@ html {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
+    justify-content: center;
+}
+
+#cardsC {
+    display: flex;
+    justify-content: center;
 }
 
 #cards {
