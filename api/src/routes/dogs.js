@@ -1,7 +1,5 @@
 const { Router } = require('express');
 const router = Router();
-const axios = require('axios');
-const { YOUR_API_KEY } = process.env;
 const { Dog, Temperament } = require('../db');
 const { allData } = require('../controllers/getAll.js');
 const { apiData } = require('../controllers/getTemps.js');

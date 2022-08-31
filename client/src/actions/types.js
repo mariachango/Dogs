@@ -7,4 +7,4 @@ export const TEMPS_FILTER = 'TEMPS_FILTER';
 export const CREATED_FILTER = 'CREATED_FILTER';
 export const NAME_ORDER = 'NAME_ORDER';
 export const WEIGHT_ORDER = 'WEIGHT_ORDER';
-export const DELETE_DETAILS = 'DELETE_DETAILS';
+export const CLEAR_DETAILS = 'CLEAR_DETAILS';

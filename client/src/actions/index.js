@@ -9,7 +9,7 @@ import {
     CREATED_FILTER,
     NAME_ORDER,
     WEIGHT_ORDER,
-    DELETE_DETAILS
+    CLEAR_DETAILS
 } from './types.js';
 
 export function getDogs() {
@@ -75,8 +75,9 @@ export function weightOrder(payload) {
     };
 };
 
-export function deleteDetails(payload) {
+export function clearDetails(payload) {
     return {
-        type: DELETE_DETAILS, payload
+        type: CLEAR_DETAILS, payload
     };
 };
+

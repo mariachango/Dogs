@@ -9,7 +9,7 @@ import {
     CREATED_FILTER,
     NAME_ORDER,
     WEIGHT_ORDER,
-    DELETE_DETAILS
+    CLEAR_DETAILS
 } from '../actions/types.js';
 
 const inicialState = {
@@ -81,7 +81,7 @@ export default function reducer(state = inicialState, action) {
             }
             return { ...state, dogs: weightOrder };
 
-        case DELETE_DETAILS:
+        case CLEAR_DETAILS:
             return { ...state, dog: [] };
 
         default: return state;

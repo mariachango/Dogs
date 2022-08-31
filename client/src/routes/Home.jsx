@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getDogs, getTemps, tempsFilter, createdFilter, nameOrder, weightOrder, deleteDetails } from '../actions/index.js';
+import { getDogs, getTemps, tempsFilter, createdFilter, nameOrder, weightOrder, clearDetails } from '../actions/index.js';
 import Header from '../components/Header.jsx';
 import NavBar from '../components/NavBar.jsx';
 import HomeCard from '../components/HomeCards.jsx';
@@ -17,7 +17,7 @@ export default function Home() {
 
     useEffect(() => dispatch(getDogs()), [dispatch]);
     useEffect(() => dispatch(getTemps()), [dispatch]);
-    useEffect(() => dispatch(deleteDetails()), [dispatch]);
+    useEffect(() => dispatch(clearDetails()), [dispatch]);
 
     const [render, setRender] = useState('');
 
@@ -26,10 +26,6 @@ export default function Home() {
     const lastCard = (currentPage * cardsPerPage);
     const firsCard = (lastCard - cardsPerPage);
     const dogCards = dogs.slice(firsCard, lastCard);
-
-    // const page = (pageNumber) => {
-    //     setCurrentPage(pageNumber);
-    // };
 
     function clickHandler(e) {
         setCurrentPage(e);
@@ -131,6 +127,7 @@ export default function Home() {
                                 image={d.image}
                                 name={d.name}
                                 temperament={d.temperament}
+                                Temperaments={d.Temperaments}
                                 weight={d.weight}
                                 key={d.id}
                             />

@@ -23,6 +23,16 @@ export default function DetailPage(props) {
         dog[0].image = "https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png";
     }
 
+    if (dog.length > 0 && !dog[0].temperament && dog[0].Temperaments) {
+        let tempArr = [];
+        dog[0].Temperaments.forEach(t => tempArr.push(t.name))
+        dog[0].temperament = tempArr.join(', ');
+    }
+
+    if (dog.length > 0 && dog[0].temperament.length < 1) {
+        dog[0].temperament = 'None';
+    }
+
     return (
         <div id="DetailPage" style={style}>
 
@@ -32,6 +42,7 @@ export default function DetailPage(props) {
 
             <div id="container">
                 <div id="detailCard">
+
                     <div><img id="dp" referrerPolicy="no-referrer" src={dog.length > 0 ? dog[0].image : undefined} alt="Img" /></div>
 
                     <h1>{dog.length > 0 && dog[0].name}</h1>

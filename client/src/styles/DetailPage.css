@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     width: 800px;
-    height: 700px;
+    height: 715px;
     background-color: white;
     justify-content: center;
     align-content: center;
@@ -63,6 +63,39 @@
     justify-content: center;
 }
 
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.delete {
+    display: flex;
+    align-self: flex-end;
+    height: 25px;
+    width: 20px;
+    margin: 15px;
+    border: white solid 1px;
+    background-color: white;
+    color: #bc1332;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.delete:hover {
+    background-color: #bc1332;
+    color: white;
+    border: #bc1332 solid 1px;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 500px) {
     #container {
         margin: 0px;
@@ -79,7 +112,7 @@
         height: auto;
         width: 275px;
     }
-    
+
     #temps {
         display: flex;
         flex-direction: column;

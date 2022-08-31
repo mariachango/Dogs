@@ -2,9 +2,19 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import style from '../styles/HomeCards.css';
 
-export default function HomeCard({ id, image, name, temperament, weight }) {
+export default function HomeCard({ id, image, name, temperament, Temperaments, weight }) {
 
     if (!image) { image = "https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png"; }
+
+    if (!temperament && Temperaments) {
+        let tempArr = [];
+        Temperaments.forEach(t => tempArr.push(t.name))
+        temperament = tempArr.join(', ');
+    }
+
+    if (temperament.length < 1) {
+        temperament = 'None';
+    }
 
     return (
 
@@ -22,7 +32,7 @@ export default function HomeCard({ id, image, name, temperament, weight }) {
 
                 <div id="t">
                     <p className="label">Temperaments:</p>
-                    <p>{temperament}</p>
+                    <p>{`${temperament}.`}</p>
                 </div>
 
             </div>
