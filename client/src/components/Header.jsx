@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
     return (
         <div id="header" style={style}>
-            <Link to={`/dogs`}>
                 <img id="pdp" referrerPolicy="no-referrer" src="https://assets.stickpng.com/images/5ae967896554160a79be9f6a.png" alt="Henry Dogs" />
-            </Link>
         </div>
     )
 };

@@ -25,7 +25,7 @@ export function getDogQuery(query) {
             const dog = await axios.get(`http://localhost:3001/dogs/?name=${query}`);
             dispatch({ type: GET_DOG_QUERY, payload: dog.data });
         } catch {
-            alert("Nothing was found.");
+            dispatch({ type: GET_DOG_QUERY, payload: '' });
         }
     };
 };

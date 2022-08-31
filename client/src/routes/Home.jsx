@@ -5,6 +5,7 @@ import { getDogs, getTemps, tempsFilter, createdFilter, nameOrder, weightOrder, 
 import Header from '../components/Header.jsx';
 import NavBar from '../components/NavBar.jsx';
 import HomeCard from '../components/HomeCards.jsx';
+import NotFound from '../components/NotFound.jsx';
 import Pages from '../components/Pages.jsx';
 import Footer from "../components/Footer.jsx";
 import style from '../styles/Home.css';
@@ -37,11 +38,6 @@ export default function Home() {
 
     function clickNextHandler() {
         setCurrentPage(currentPage + 1);
-    }
-    
-    function pageOne(e) {
-        setCurrentPage(1);
-        console.log(currentPage);
     }
 
     function tempsFilterHandler(e) {
@@ -81,7 +77,7 @@ export default function Home() {
 
             <Header />
 
-            <NavBar setCurrentPage={setCurrentPage}/>
+            <NavBar setCurrentPage={setCurrentPage} />
 
             <div id="filterBar" style={style}>
                 <div id="sort">
@@ -119,31 +115,38 @@ export default function Home() {
             </div>
 
             <div id='cardsC'>
-                <div id="cards">
-                    {dogCards.map((d) => {
-                        return (
-                            <HomeCard
-                                id={d.id}
-                                image={d.image}
-                                name={d.name}
-                                temperament={d.temperament}
-                                Temperaments={d.Temperaments}
-                                weight={d.weight}
-                                key={d.id}
-                            />
-                        )
-                    })}
-                </div>
+                
+                {dogs.length > 1 ? (
+                    <div id="cards">
+                        {dogCards.map((d) => {
+                            return (
+                                <HomeCard
+                                    id={d.id}
+                                    image={d.image}
+                                    name={d.name}
+                                    temperament={d.temperament}
+                                    Temperaments={d.Temperaments}
+                                    weight={d.weight}
+                                    key={d.id}
+                                />
+                            )
+                        })}
+                    </div>
+
+                ) : (<NotFound />)}
+            
             </div>
 
-            <Pages
-                cardsPerPage={cardsPerPage}
-                dogs={dogs.length}
-                clickHandler={clickHandler}
-                currentPage={currentPage}
-                clickPrevHandler={clickPrevHandler}
-                clickNextHandler={clickNextHandler}
-            />
+            <div className={dogs.length < 1 ? 'hiddenDiv' : undefined}>
+                <Pages
+                    cardsPerPage={cardsPerPage}
+                    dogs={dogs.length}
+                    clickHandler={clickHandler}
+                    currentPage={currentPage}
+                    clickPrevHandler={clickPrevHandler}
+                    clickNextHandler={clickNextHandler}
+                />
+            </div>
 
             <Footer />
 

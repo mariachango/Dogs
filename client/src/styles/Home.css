@@ -58,6 +58,10 @@ html {
     color: black;
 }
 
+.hiddenDiv {
+    display: none;
+}
+
 @media only screen and (max-width: 500px) {
     #cardsC {
         display: flex;

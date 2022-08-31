@@ -1,0 +1,26 @@
+#nfContainer {
+    background-color: white;
+    margin: 70px;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+#nfContainer p {
+    margin-bottom: 0px;
+    color: black;
+    font-size: larger;
+    font-weight: lighter;
+}
+
+#nf {
+    width: 350px;
+}
+
+@media only screen and (max-width: 600px) {
+    #nf {
+        width: 200px;
+    }
+    #nfContainer p {
+        font-size: small;
+    }
+}
