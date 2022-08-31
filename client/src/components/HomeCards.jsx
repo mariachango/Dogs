@@ -12,10 +12,6 @@ export default function HomeCard({ id, image, name, temperament, Temperaments, w
         temperament = tempArr.join(', ');
     }
 
-    if (temperament.length < 1) {
-        temperament = 'None';
-    }
-
     return (
 
         <Link id='link' to={`/dogs/${id}`}>
@@ -32,7 +28,7 @@ export default function HomeCard({ id, image, name, temperament, Temperaments, w
 
                 <div id="t">
                     <p className="label">Temperaments:</p>
-                    <p>{`${temperament}.`}</p>
+                    <p>{temperament}</p>
                 </div>
 
             </div>

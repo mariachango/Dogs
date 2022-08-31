@@ -116,7 +116,7 @@ export default function Home() {
 
             <div id='cardsC'>
                 
-                {dogs.length > 1 ? (
+                {dogs.length >= 1 ? (
                     <div id="cards">
                         {dogCards.map((d) => {
                             return (

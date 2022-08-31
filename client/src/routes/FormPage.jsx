@@ -111,7 +111,7 @@ export default function FormPage() {
         if (input.temperament?.length >= 6) {
             alert('You can only select up to 6 temperaments.');
         } else if (input.temperament?.includes(e.target.value)) {
-            alert('You can only choose this temperaments.');
+            alert('You already chose this temperaments.');
         } else {
             setInput({
                 ...input,
@@ -138,8 +138,7 @@ export default function FormPage() {
             !err.min_height &&
             !err.max_height &&
             !err.min_life_span &&
-            !err.max_life_span &&
-            !err.mtemperament) {
+            !err.max_life_span) {
 
             alert("New dog has been succesfully added!");
 
